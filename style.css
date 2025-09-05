@@ -45,7 +45,8 @@ footer {
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    /*font-size: 2rem;*/
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .controls {
@@ -188,6 +189,7 @@ img {
         font-size: 0.5rem;
     }
 }
+
 
 
 
