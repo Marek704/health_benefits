@@ -175,4 +175,11 @@ img {
 
 .center {
     text-align: center;
+
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 0.7rem;
+  }
 }
