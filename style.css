@@ -176,19 +176,8 @@ img {
 
 .center {
     text-align: center;
-
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 0.5rem;
-    }
-
-    td:first-child,
-    th:first-child {
-        font-size: 0.5rem;
-    }
-}
 
 
 
