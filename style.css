@@ -211,22 +211,24 @@ img {
 @media (max-width: 480px) {
   .container,
   header,
-  footer,
-  .table-wrapper,
-  table {
+  footer {
     width: 100vw;
     max-width: 100vw;
     margin: 0;
     border-radius: 0;
   }
 
-  .controls {
-    flex-direction: column;
-    align-items: stretch;
+  /* scroll obal pre tabuľku */
+  .table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* plynulé scrollovanie na iOS */
   }
 
-  header h1 {
-    font-size: 1.2rem;
+  table {
+    min-width: 480px;  /* nech má vždy šírku aspoň mobilu */
+    width: max-content; /* prispôsobí sa obsahu, nie 100vw */
   }
 
   th, td {
