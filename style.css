@@ -1,10 +1,10 @@
-/* =============== ZÁKLAD =============== */
+/* =============== ZÁKLADNÉ NASTAVENIE =============== */
 :root {
-  --primary: #1e3a8a;   /* dark blue */
-  --secondary: #3b82f6; /* bright blue */
-  --light: #f0f9ff;
-  --white: #ffffff;
-  --gray: #f1f5f9;
+  --primary: #1e3a8a;   /* tmavomodrá */
+  --secondary: #3b82f6; /* svetlomodrá */
+  --light: #f0f9ff;     /* svetlé pozadie */
+  --white: #ffffff;     /* biela */
+  --gray: #f1f5f9;      /* svetlosivá */
 }
 
 body {
@@ -21,7 +21,7 @@ body {
   padding: 0 1rem;
 }
 
-/* =============== HEADER & FOOTER =============== */
+/* =============== HLAVIČKA A PÄTIČKA =============== */
 header,
 footer {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -45,7 +45,7 @@ header h1 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-/* =============== OVLÁDACIE PRVKY =============== */
+/* =============== FILTRE A VYHĽADÁVANIE =============== */
 .controls {
   display: flex;
   justify-content: center;
@@ -66,6 +66,7 @@ input {
   background: var(--white);
 }
 
+/* efekt po kliknutí do input/select */
 select:focus,
 input:focus {
   border-color: var(--secondary);
@@ -74,14 +75,14 @@ input:focus {
 
 /* =============== TABUĽKA =============== */
 .table-wrapper {
-  overflow-x: auto; /* scroll na mobiloch */
+  overflow-x: auto; /* posuvník na mobiloch */
   margin: 1rem 0;
 }
 
 table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 5px;
+  border-spacing: 5px; /* medzera medzi bunkami */
   background: var(--white);
   border-radius: 12px;
   overflow: hidden;
@@ -97,20 +98,7 @@ td {
   border-radius: 8px;
 }
 
-th {
-  background: rgba(59, 130, 246, 0.75);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: darkblue;
-  text-align: center;
-  font-size: 1.1rem;
-}
-
-tr:hover {
-  background: var(--light);
-}
-
-/* stĺpce */
+/* prvý stĺpec (kategórie) */
 td:first-child,
 th:first-child {
   background: rgba(0, 0, 255, 0.326);
@@ -118,19 +106,25 @@ th:first-child {
   text-transform: uppercase;
 }
 
+/* farebné stĺpce pre poisťovne */
 td:nth-child(2),
 th:nth-child(2) {
-  background: #f89b20;
+  background: #f89b20; /* oranžová - Dôvera */
 }
 
 td:nth-child(3),
 th:nth-child(3) {
-  background: #009DA1;
+  background: #009DA1; /* tyrkysová - VšZP */
 }
 
 td:nth-child(4),
 th:nth-child(4) {
-  background: #5db100;
+  background: #5db100; /* zelená - Union */
+}
+
+/* hover efekt */
+tr:hover {
+  background: var(--light);
 }
 
 /* =============== TLAČIDLÁ =============== */
@@ -158,6 +152,7 @@ button {
   transition: transform 0.2s ease;
 }
 
+/* efekt pri hover */
 button:hover {
   transform: scale(1.05);
 }
@@ -175,7 +170,7 @@ img {
 
 /* =============== RESPONSIVE MEDIA QUERIES =============== */
 
-/* tablety */
+/* TABLETY */
 @media (max-width: 768px) {
   .container,
   header,
@@ -185,7 +180,7 @@ img {
     width: 100vw;
     max-width: 100vw;
     margin: 0;
-    border-radius: 0; /* nech sedia po celej šírke */
+    border-radius: 0; /* na menších obrazovkách po celej šírke */
   }
 
   header h1 {
@@ -207,7 +202,7 @@ img {
   }
 }
 
-/* mobily */
+/* MOBILY */
 @media (max-width: 480px) {
   .container,
   header,
@@ -217,11 +212,11 @@ img {
     width: 100vw;
     max-width: 100vw;
     margin: 0;
-    border-radius: 0; /* nech sedia po celej šírke */
+    border-radius: 0;
   }
 
   header h1 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   th, td {
@@ -234,7 +229,6 @@ img {
   }
 
   button {
-    font-size: 0.80rem;
+    font-size: 0.8rem;
   }
 }
-
