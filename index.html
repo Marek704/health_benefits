@@ -1,66 +1,88 @@
-<!DOCTYPE html><!-- tells the browser that it is an HTML5 document -->
-<html lang="sk"><!-- sets the language of the document to Slovak -->
-
+<!DOCTYPE html>
+<html lang="sk">
 <head>
-  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"><!-- ensures correct character encoding -->
-  <title>Porovnanie benefitov zdravotných poisťovní</title><!-- webpage title -->
-  <link rel="stylesheet" href="./style.css"><!-- attach an external CSS file styling -->
+  <!-- nastavenie kódovania -->
+  <meta charset="UTF-8">
+  <!-- aby sa stránka správne zobrazovala na mobiloch -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- názov stránky -->
+  <title>Porovnanie benefitov zdravotných poisťovní</title>
+  <!-- pripojenie CSS -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <header <div class="container">
-    <div class="container"><!-- class "container" is used to set the layout of content.  -->
-      <h1>Porovnanie benefitov zdravotných poisťovní</h1><!-- header -->
-      <p>Vyhľadajte a porovnajte výhody Dôvera, VšZP a Union</p><!-- text -->
+  <!-- HLAVIČKA -->
+  <header>
+    <div class="container">
+      <h1>Porovnanie benefitov zdravotných poisťovní</h1>
+      <p>Vyhľadajte a porovnajte výhody Dôvera, VšZP a Union</p>
     </div>
-    <div class="controls"><!-- class is used for styling -->
-      <select id="filter"><!-- drop-down menu (categories will be added later) -->
-        <option value="">-- Vyber kategóriu --</option><!-- text of filter -->
+    <!-- filter + vyhľadávanie -->
+    <div class="controls">
+      <select id="filter">
+        <option value="">-- Vyber kategóriu --</option>
       </select>
-      <input type="text" id="search" placeholder="🔍 Hľadať benefit..."><!-- search box -->
+      <input type="text" id="search" placeholder="🔍 Hľadať benefit...">
     </div>
   </header>
 
+  <!-- HLAVNÝ OBSAH -->
   <main class="container">
-    <table id="comparisonTable"><!-- set id of table -->
-      <thead><!-- column names -->
-        <tr><!-- table rows -->
-          <th>Kategória</th><!-- 1st column -->
-          <th><img src="./dôvera.png" alt="Dôvera img"></th><!-- 2nd column -->
-          <th><img src="./VZP.png" alt="VZP img"></th><!-- 3rd column -->
-          <th><img src="./union.png" alt="Union img"></th><!-- 4th column -->
-        </tr>
-      </thead>
-      <tbody></tbody><!-- later vill be added table data -->
-      <thead>
-        <tr><!-- table rows -->
-          <th></th><!-- buttons to change insurance / links -->
-          <th>Chcem benefity Dôvera<br><a href="https://prihlaska.dovera.sk/formular?kz=0005536291" target="_blank">
-              <button>Link na prepoistenie</button>
-            </a></th>
-          <th>Chcem benefity VšZP<br><a href="https://prihlaska.vszp.sk/prihlaska-online?enr=91781452" target="_blank">
-              <button>Link na prepoistenie</button>
-            </a></th>
-          <th>Chcem benefity Union<br><a href="https://www.vipunion.sk/PSP_UZPRedirect?language=sk&uzptoken=TQyODADIN3iL5NQk0zNNgMj2hkETNMUwx0N3z5MZzzzTMEOuNTzNUDzxhQIMGRTY4kTcy4DM" target="_blank">
-              <button>Link na prepoistenie</button>
-            </a></th>
-        </tr>
-      </thead>
-    </table>
+    <!-- obal tabuľky pre responzívny scroll -->
+    <div class="table-wrapper">
+      <table id="comparisonTable">
+        <!-- HLAVIČKA TABUĽKY -->
+        <thead>
+          <tr>
+            <th>Kategória</th>
+            <th><img src="./dôvera.png" alt="Dôvera"></th>
+            <th><img src="./VZP.png" alt="VšZP"></th>
+            <th><img src="./union.png" alt="Union"></th>
+          </tr>
+        </thead>
+        <!-- OBSAH TABUĽKY (dynamicky doplnený JS-om) -->
+        <tbody>
+          <!-- sem sa neskôr pridajú benefity -->
+        </tbody>
+        <!-- SPODNÁ ČASŤ TABUĽKY S ODKAZMI -->
+        <tfoot>
+          <tr>
+            <th></th>
+            <td>
+              Chcem benefity Dôvera<br>
+              <a href="https://prihlaska.dovera.sk/formular?kz=0005536291" target="_blank">
+                <button>Link na prepoistenie</button>
+              </a>
+            </td>
+            <td>
+              Chcem benefity VšZP<br>
+              <a href="https://prihlaska.vszp.sk/prihlaska-online?enr=91781452" target="_blank">
+                <button>Link na prepoistenie</button>
+              </a>
+            </td>
+            <td>
+              Chcem benefity Union<br>
+              <a href="https://www.vipunion.sk/PSP_UZPRedirect?language=sk&uzptoken=TQyODADIN3iL5NQk0zNNgMj2hkETNMUwx0N3z5MZzzzTMEOuNTzNUDzxhQIMGRTY4kTcy4DM" target="_blank">
+                <button>Link na prepoistenie</button>
+              </a>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   </main>
 
+  <!-- PÄTIČKA -->
   <footer>
-    <p>Údaje sú prebraté zo stránok: <!-- sources of data used to create the webpage -->
+    <p>Údaje sú prebraté zo stránok:
       <br> www.union.sk 29.7.2025
       <br> www.dovera.sk 29.7.2025
       <br> www.vzp.sk 29.7.2025</p>
     <p class="center">© Marek Mondel 2025</p>
   </footer>
 
-  <script src="./index.js"></script><!-- link to JavaScript -->
+  <!-- pripojenie JS -->
+  <script src="./index.js"></script>
 </body>
-
-
 </html>
-
-
