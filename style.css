@@ -1,10 +1,15 @@
 /* =============== ZÁKLADNÉ NASTAVENIE =============== */
 :root {
-  --primary: #1e3a8a;   /* tmavomodrá */
-  --secondary: #3b82f6; /* svetlomodrá */
-  --light: #f0f9ff;     /* svetlé pozadie */
-  --white: #ffffff;     /* biela */
-  --gray: #f1f5f9;      /* svetlosivá */
+  --primary: #1e3a8a;
+  /* tmavomodrá */
+  --secondary: #3b82f6;
+  /* svetlomodrá */
+  --light: #f0f9ff;
+  /* svetlé pozadie */
+  --white: #ffffff;
+  /* biela */
+  --gray: #f1f5f9;
+  /* svetlosivá */
 }
 
 body {
@@ -75,14 +80,16 @@ input:focus {
 
 /* =============== TABUĽKA =============== */
 .table-wrapper {
-  overflow-x: auto; /* posuvník na mobiloch */
+  overflow-x: auto;
+  /* posuvník na mobiloch */
   margin: 1rem 0;
 }
 
 table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 5px; /* medzera medzi bunkami */
+  border-spacing: 5px;
+  /* medzera medzi bunkami */
   background: var(--white);
   border-radius: 12px;
   overflow: hidden;
@@ -109,23 +116,31 @@ th:first-child {
 /* farebné stĺpce pre poisťovne */
 td:nth-child(2),
 th:nth-child(2) {
-  background: #f89b20; /* oranžová - Dôvera */
+  background: #f89b20;
+  /* oranžová - Dôvera */
 }
 
 td:nth-child(3),
 th:nth-child(3) {
-  background: #009DA1; /* tyrkysová - VšZP */
+  background: #009DA1;
+  /* tyrkysová - VšZP */
 }
 
 td:nth-child(4),
 th:nth-child(4) {
-  background: #5db100; /* zelená - Union */
+  background: #5db100;
+  /* zelená - Union */
 }
 
 /* hover efekt */
 tr:hover {
   background: var(--light);
 }
+
+/* odsadenie ul */
+  ul {
+    padding-left: 10px;
+  }
 
 /* =============== TLAČIDLÁ =============== */
 button {
@@ -152,6 +167,13 @@ button {
   transition: transform 0.2s ease;
 }
 
+/* vycentrovanie na stred */
+tfoot td {
+  text-align: center;   /* centrovanie textu aj tlačidiel */
+  vertical-align: middle; /* ak chceš aj vertikálne */
+  font-weight: bold;
+}
+
 /* efekt pri hover */
 button:hover {
   transform: scale(1.05);
@@ -162,6 +184,12 @@ img {
   max-width: 100px;
   height: auto;
   border-radius: 30%;
+  display: block;
+  /* aby nerešpektoval inline medzery */
+  margin-left: auto;
+  /* automatické medzery vľavo */
+  margin-right: auto;
+  /* automatické medzery vpravo */
 }
 
 .center {
@@ -172,6 +200,7 @@ img {
 
 /* TABLETY */
 @media (max-width: 768px) {
+
   .container,
   header,
   footer,
@@ -180,14 +209,16 @@ img {
     width: 100vw;
     max-width: 100vw;
     margin: 0;
-    border-radius: 0; /* na menších obrazovkách po celej šírke */
+    border-radius: 0;
+    /* na menších obrazovkách po celej šírke */
   }
 
   header h1 {
     font-size: 1.4rem;
   }
 
-  th, td {
+  th,
+  td {
     font-size: 0.9rem;
     padding: 0.7rem;
   }
@@ -204,6 +235,7 @@ img {
 
 /* MOBILY */
 @media (max-width: 480px) {
+
   .container,
   header,
   footer,
@@ -219,7 +251,8 @@ img {
     font-size: 1.2rem;
   }
 
-  th, td {
+  th,
+  td {
     font-size: 0.75rem;
     padding: 0.5rem;
   }
